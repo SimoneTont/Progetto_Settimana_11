@@ -6,6 +6,7 @@ import MusicPlayer from './music_player';
 import MainArtist from './main_artist';
 
 export default function ArtistPage() {
+
     return (
         <Container fluid>
             <Row>
