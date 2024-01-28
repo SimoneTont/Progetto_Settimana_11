@@ -7,7 +7,8 @@ import { bigReducers } from '../reducers/reducers';
 const initialState = {
     rockSongs: [],
     popSongs: [],
-    hiphopSongs: []
+    hiphopSongs: [],
+    favorites: []
 };
 
 const persistConfig = { key: "root", storage };

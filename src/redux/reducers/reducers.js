@@ -1,5 +1,5 @@
 import React from 'react'
-import { RockSongs } from '../Actions/actions'
+import { RockSongs, PopSongs, HipHopSongs, AddFavorite } from '../Actions/actions'
 
 export const bigReducers = (state = [], action) => {
 
@@ -19,6 +19,11 @@ export const bigReducers = (state = [], action) => {
           ...state,
           hiphopSongs: [action.payload]
         })
+        case 'ADD_FAVORITE':
+          return ({
+            ...state,
+            favorites: [action.payload]
+          })
       default:
         break;
     }

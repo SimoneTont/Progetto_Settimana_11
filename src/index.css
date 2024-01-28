@@ -234,3 +234,8 @@ ul {
 {
   margin-bottom: 4%
 }
+
+.myIcon:hover
+{
+  display: inline !important;
+}

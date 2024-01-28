@@ -32,3 +32,12 @@ export const HipHopSongs = () => {
               .catch(err => console.error(err)) 
       }
 }
+
+export const AddFavorite = (fav) => {
+    return (dispatch, getState) => {
+        console.log(fav)
+        {
+            return dispatch({ type: 'ADD_FAVORITE', payload: fav })
+        }
+      }
+}

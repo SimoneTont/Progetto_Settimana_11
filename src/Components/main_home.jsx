@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
-import { RockSongs, PopSongs, HipHopSongs } from '../redux/Actions/actions';
+import { RockSongs, PopSongs, HipHopSongs, AddFavorite } from '../redux/Actions/actions';
 export default function MainHome() {
   const dispatch = useDispatch()
 
@@ -53,8 +53,9 @@ export default function MainHome() {
                 id="rockSection"
               >
                 {rock.map(element => (
-                  <Col>
-                    <img className="img-fluid" src={element.album.cover} alt="AlbumPage"></img>
+                  <Col className='position-relative'>
+                    <img className="img-fluid" src={element.album.cover} alt={element.album.title}
+                    onClick={(element) => dispatch(AddFavorite(element.album))}></img>
                   </Col>))}
               </Row>
             </Container>
@@ -69,8 +70,8 @@ export default function MainHome() {
                 id="popSection"
               >
                 {pop.map(element => (
-                  <Col>
-                    <img className="img-fluid" src={element.album.cover} alt="AlbumPage"></img>
+                  <Col className='position-relative'>
+                    <img className="img-fluid" src={element.album.cover} alt={element.album.title}></img>
                   </Col>))}
               </Row>
             </Container>
@@ -85,8 +86,8 @@ export default function MainHome() {
                 id="hipHopSection"
               >
                 {hiphop.map(element => (
-                  <Col>
-                    <img className="img-fluid" src={element.album.cover} alt="AlbumPage"></img>
+                  <Col className='position-relative'>
+                    <img className="img-fluid" src={element.album.cover} alt={element.album.title}></img>
                   </Col>))}
               </Row>
             </Container>
